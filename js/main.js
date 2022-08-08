@@ -37,11 +37,12 @@
         $('#contact-form').validator();
 
         $('#contact-form').on('submit', function (e) {
-            e.preventDefault();
+           
             var response = grecaptcha.getResponse();
             if(response.length == 0) 
             { 
                 //reCaptcha not verified
+                 e.preventDefault();
                 alert("please verify you are humann!"); 
                 return false;
             } else {
